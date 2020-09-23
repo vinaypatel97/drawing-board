@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/drawing-board/static/css/main.81e3f1b2.chunk.css",
+    "main.js": "/drawing-board/static/js/main.80877b00.chunk.js",
+    "main.js.map": "/drawing-board/static/js/main.80877b00.chunk.js.map",
+    "runtime-main.js": "/drawing-board/static/js/runtime-main.1cf25a2e.js",
+    "runtime-main.js.map": "/drawing-board/static/js/runtime-main.1cf25a2e.js.map",
+    "static/js/2.8b0759ff.chunk.js": "/drawing-board/static/js/2.8b0759ff.chunk.js",
+    "static/js/2.8b0759ff.chunk.js.map": "/drawing-board/static/js/2.8b0759ff.chunk.js.map",
+    "index.html": "/drawing-board/index.html",
+    "precache-manifest.bf5d3352beb5f9bac2e0a8be44e87775.js": "/drawing-board/precache-manifest.bf5d3352beb5f9bac2e0a8be44e87775.js",
+    "service-worker.js": "/drawing-board/service-worker.js",
+    "static/css/main.81e3f1b2.chunk.css.map": "/drawing-board/static/css/main.81e3f1b2.chunk.css.map",
+    "static/js/2.8b0759ff.chunk.js.LICENSE.txt": "/drawing-board/static/js/2.8b0759ff.chunk.js.LICENSE.txt",
+    "static/media/dot.png": "/drawing-board/static/media/dot.69f073c4.png",
+    "static/media/erase.png": "/drawing-board/static/media/erase.3bfa5ce6.png",
+    "static/media/highlight.png": "/drawing-board/static/media/highlight.f127e836.png",
+    "static/media/pen.png": "/drawing-board/static/media/pen.447a0165.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1cf25a2e.js",
+    "static/js/2.8b0759ff.chunk.js",
+    "static/css/main.81e3f1b2.chunk.css",
+    "static/js/main.80877b00.chunk.js"
+  ]
+}
