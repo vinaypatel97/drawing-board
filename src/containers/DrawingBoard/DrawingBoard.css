@@ -7,7 +7,7 @@
     position: relative;
     width: 80vw;
     height: 800px;
-    border: 2px solid black;
+    border: 2px solid rgba(73,89,172, 0.3);
     border-radius: 5px;
     -moz-user-select: none;
     -webkit-user-select: none;
@@ -15,7 +15,7 @@
     user-select: none;
 }
 
-.drawingPad{
+.drawingPad {
     position: absolute;
     left: 0;
     top: 0;
@@ -26,7 +26,7 @@
 
 .leftPane {
     width: 10vw;
-    border: 2px solid black;
+    border: 2px solid rgba(73,89,172, 0.3);
     margin-right: 5px;
     border-radius: 5px;
 }
@@ -62,9 +62,24 @@
 
 .selected {
     background: #4959Ac;
-    opacity: 0.6;
+}
+
+.mainColor {
+    color: rgb(73,89,172, 0.7);
 }
 
 .notSelected {
     background: none;
+}
+
+.marginB6 {
+    margin-bottom: 6px;
+}
+
+.marginB4 {
+    margin-bottom: 4px;
+}
+
+.cursorP {
+    cursor: pointer;
 }

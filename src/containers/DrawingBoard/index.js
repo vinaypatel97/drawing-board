@@ -3,6 +3,8 @@ import './DrawingBoard.css';
 import DrawingPad from '../../js/drawingBoard';
 import pen from '../../images/pen.png';
 import dot from '../../images/dot.png';
+import eraser from '../../images/erase.png'
+import highlighter from '../../images/highlight.png';
 
 export default class Index extends Component {
     constructor(props) {
@@ -128,6 +130,8 @@ export default class Index extends Component {
     }
 
     updatePx = (type) => {
+        const { selectedOption } = this.state;
+        if (selectedOption !== 1) return;
         this.setState({ selectedPx: type });
         const width = this.getBrushWidth(type);
         this.drawingPad.updateBrushWidth(width, width, width);
@@ -149,21 +153,33 @@ export default class Index extends Component {
     render() {
 
         const { penColor, placeHolderColor } = this.state;
+
         return (
-            <div className="wrapper">
-                <div className="leftPane">
-                    <img src={pen} className={`padding10 large ${this.getCss(1)}`} alt="img" onClick={() => this.startDrawing(1)} />
-                    <img src={dot} className={`small margin10 ${this.getCss('small')}`} alt="img" onClick={() => this.updatePx('small')} />
-                    <img src={dot} className={`medium margin10 ${this.getCss('medium')}`} alt="img" onClick={() => this.updatePx('medium')} />
-                    <img src={dot} className={`large margin10 ${this.getCss('large')}`} alt="img" onClick={() => this.updatePx('large')} />
-                    <input type="color" id="favcolor" name="favcolor" className={`margin10`} value={penColor} onChange={(e) => this.onChangeColor(e, 'penColor')}></input>
-                    <button id="erase" className={`margin10 ${this.getCss(2)}`} onClick={() => this.startErase(2)}>Erase</button>
-                    <button id="highlight" className={`margin10 ${this.getCss(3)}`} onClick={() => this.startHighlighting(3)}>Highlight</button>
-                    <input type="color" id="favcolor" name="favcolor" className={`margin10`} value={placeHolderColor} onChange={(e) => this.onChangeColor(e, 'highLighter')}></input>
+            <div>
+                <h1 className="mainColor">Drawing Board</h1>
+                <div className="wrapper">
+                    <div className="leftPane">
+                        <img src={pen} className={`padding10 large cursorP margin10 ${this.getCss(1)}`} alt="img" onClick={() => this.startDrawing(1)} />
+                        <div>
+                            <img src={dot} className={`small margin10 cursorP ${this.getCss('small')}`} alt="img" onClick={() => this.updatePx('small')} />
+                            <img src={dot} className={`medium margin10 marginB6 cursorP ${this.getCss('medium')}`} alt="img" onClick={() => this.updatePx('medium')} />
+                            <img src={dot} className={`large margin10 marginB4 cursorP ${this.getCss('large')}`} alt="img" onClick={() => this.updatePx('large')} />
+                        </div>
+                        <div>
+                            <span>Pen Color : </span><input type="color" id="favcolor" name="favcolor" className={`margin10 cursorP`} value={penColor} onChange={(e) => this.onChangeColor(e, 'penColor')}></input>
+                        </div>
+                        <img src={eraser} id="erase" className={`padding10 margin10 large cursorP ${this.getCss(2)}`} alt="img" onClick={() => this.startErase(2)} />
+                        <div>
+                            <img src={highlighter} id="highlight" className={`padding10 margin10 large cursorP ${this.getCss(3)}`} alt="img" onClick={() => this.startHighlighting(3)} />
+                        </div>
+                        <div>
+                            <span>HL Color : </span><input type="color" id="favcolor" name="favcolor" className={`margin10 cursorP`} value={placeHolderColor} onChange={(e) => this.onChangeColor(e, 'highLighter')}></input>
+                        </div>
+                    </div>
+                    <div className="middlePane">
+                        <canvas id="drawing-pad" className="drawingPad" width="1000" height="1000"></canvas>
+                    </div>
                 </div>
-                <div className="middlePane">
-                    <canvas id="drawing-pad" className="drawingPad" width="1000" height="1000"></canvas>
-                </div >
             </div>
         )
     }
